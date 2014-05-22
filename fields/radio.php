@@ -279,7 +279,6 @@ class acf_field_radio extends acf_field
 	
 }
 
-new acf_field_radio();
 /*
 *  acf_field_radio
 *
