@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_email') ):
+
 class acf_field_email extends acf_field
 {
 	
@@ -138,6 +140,33 @@ class acf_field_email extends acf_field
 	
 }
 
-new acf_field_email();
+/*
+*  acf_field_email
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_email()
+{
+	global $acf_field_email;
+	
+	if( !isset($acf_field_email) )
+	{
+		$acf_field_email = new acf_field_email();
+	}
+	
+	return $acf_field_email;
+}
+
+
+// initialize
+acf_field_email();
+
+endif; // class_exists check
 
 ?>

@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_input') ):
+
 class acf_input {
 	
 	
@@ -205,9 +207,34 @@ class acf_input {
 	
 }
 
+/*
+*  acf_input
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_input()
+{
+	global $acf_input;
+	
+	if( !isset($acf_input) )
+	{
+		$acf_input = new acf_input();
+	}
+	
+	return $acf_input;
+}
+
 
 // initialize
-new acf_input();
+acf_input();
+
+endif; // class_exists check
 
 
 /*

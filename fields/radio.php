@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_radio') ):
+
 class acf_field_radio extends acf_field
 {
 	/*
@@ -278,5 +280,33 @@ class acf_field_radio extends acf_field
 }
 
 new acf_field_radio();
+/*
+*  acf_field_radio
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_radio()
+{
+	global $acf_field_radio;
+	
+	if( !isset($acf_field_radio) )
+	{
+		$acf_field_radio = new acf_field_radio();
+	}
+	
+	return $acf_field_radio;
+}
+
+
+// initialize
+acf_field_radio();
+
+endif; // class_exists check
 
 ?>

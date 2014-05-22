@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_revisions') ):
+
 class acf_revisions {
 
 	/*
@@ -312,6 +314,33 @@ class acf_revisions {
 			
 }
 
-new acf_revisions();
+/*
+*  acf_revisions
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_revisions()
+{
+	global $acf_revisions;
+	
+	if( !isset($acf_revisions) )
+	{
+		$acf_revisions = new acf_revisions();
+	}
+	
+	return $acf_revisions;
+}
+
+
+// initialize
+acf_revisions();
+
+endif; // class_exists check
 
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_date_picker') ):
+
 class acf_field_date_picker extends acf_field
 {
 	
@@ -257,6 +259,33 @@ class acf_field_date_picker extends acf_field
 	}
 }
 
-new acf_field_date_picker();
+/*
+*  acf_field_date_picker
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_date_picker()
+{
+	global $acf_field_date_picker;
+	
+	if( !isset($acf_field_date_picker) )
+	{
+		$acf_field_date_picker = new acf_field_date_picker();
+	}
+	
+	return $acf_field_date_picker;
+}
+
+
+// initialize
+acf_field_date_picker();
+
+endif; // class_exists check
 
 ?>

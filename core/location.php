@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_location') ):
+
 class acf_location {
 
 	/*
@@ -1110,7 +1112,34 @@ class acf_location {
 			
 }
 
-new acf_location();
+/*
+*  acf_location
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_location()
+{
+	global $acf_location;
+	
+	if( !isset($acf_location) )
+	{
+		$acf_location = new acf_location();
+	}
+	
+	return $acf_location;
+}
+
+
+// initialize
+acf_location();
+
+endif; // class_exists check
 
 
 /*

@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_controller_comment') ):
+
 class acf_controller_comment {
 	
 	/*
@@ -269,6 +271,33 @@ class acf_controller_comment {
 			
 }
 
-new acf_controller_comment();
+/*
+*  acf_controller_comment
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_controller_comment()
+{
+	global $acf_controller_comment;
+	
+	if( !isset($acf_controller_comment) )
+	{
+		$acf_controller_comment = new acf_controller_comment();
+	}
+	
+	return $acf_controller_comment;
+}
+
+
+// initialize
+acf_controller_comment();
+
+endif; // class_exists check
 
 ?>

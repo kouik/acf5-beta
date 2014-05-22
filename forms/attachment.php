@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_controller_attachment') ):
+
 class acf_controller_attachment {
 	
 	/*
@@ -265,6 +267,33 @@ class acf_controller_attachment {
 			
 }
 
-new acf_controller_attachment();
+/*
+*  acf_controller_attachment
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_controller_attachment()
+{
+	global $acf_controller_attachment;
+	
+	if( !isset($acf_controller_attachment) )
+	{
+		$acf_controller_attachment = new acf_controller_attachment();
+	}
+	
+	return $acf_controller_attachment;
+}
+
+
+// initialize
+acf_controller_attachment();
+
+endif; // class_exists check
 
 ?>

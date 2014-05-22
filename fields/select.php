@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_input') ):
+
 class acf_field_select extends acf_field
 {
 	/*
@@ -537,6 +539,33 @@ class acf_field_select extends acf_field
 	
 }
 
-new acf_field_select();
+/*
+*  acf_field_select
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_select()
+{
+	global $acf_field_select;
+	
+	if( !isset($acf_field_select) )
+	{
+		$acf_field_select = new acf_field_select();
+	}
+	
+	return $acf_field_select;
+}
+
+
+// initialize
+acf_field_select();
+
+endif; // class_exists check
 
 ?>

@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_controller_user') ):
+
 class acf_controller_user {
 	
 	/*
@@ -295,6 +297,33 @@ class acf_controller_user {
 			
 }
 
-new acf_controller_user();
+/*
+*  acf_controller_user
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_controller_user()
+{
+	global $acf_controller_user;
+	
+	if( !isset($acf_controller_user) )
+	{
+		$acf_controller_user = new acf_controller_user();
+	}
+	
+	return $acf_controller_user;
+}
+
+
+// initialize
+acf_controller_user();
+
+endif; // class_exists check
 
 ?>

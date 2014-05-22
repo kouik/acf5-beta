@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_wysiwyg') ):
+
 class acf_field_wysiwyg extends acf_field
 {
 	
@@ -418,7 +420,34 @@ class acf_field_wysiwyg extends acf_field
 	
 }
 
-new acf_field_wysiwyg();
+/*
+*  acf_field_wysiwyg
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_wysiwyg()
+{
+	global $acf_field_wysiwyg;
+	
+	if( !isset($acf_field_wysiwyg) )
+	{
+		$acf_field_wysiwyg = new acf_field_wysiwyg();
+	}
+	
+	return $acf_field_wysiwyg;
+}
+
+
+// initialize
+acf_field_wysiwyg();
+
+endif; // class_exists check
 
 
 // Create an acf version of the_content filter (acf_the_content)

@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_image') ):
+
 class acf_field_image extends acf_field {
 	
 	/*
@@ -414,5 +416,33 @@ class acf_field_image extends acf_field {
 }
 
 new acf_field_image();
+/*
+*  acf_field_image
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_image()
+{
+	global $acf_field_image;
+	
+	if( !isset($acf_field_image) )
+	{
+		$acf_field_image = new acf_field_image();
+	}
+	
+	return $acf_field_image;
+}
+
+
+// initialize
+acf_field_image();
+
+endif; // class_exists check
 
 ?>

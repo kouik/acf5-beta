@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_google_map') ):
+
 class acf_field_google_map extends acf_field
 {
 	/*
@@ -230,6 +232,33 @@ class acf_field_google_map extends acf_field
 	}
 }
 
-new acf_field_google_map();
+/*
+*  acf_field_google_map
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_google_map()
+{
+	global $acf_field_google_map;
+	
+	if( !isset($acf_field_google_map) )
+	{
+		$acf_field_google_map = new acf_field_google_map();
+	}
+	
+	return $acf_field_google_map;
+}
+
+
+// initialize
+acf_field_google_map();
+
+endif; // class_exists check
 
 ?>

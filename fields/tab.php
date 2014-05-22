@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_input') ):
+
 class acf_field_tab extends acf_field
 {
 	
@@ -92,6 +94,33 @@ class acf_field_tab extends acf_field
 	
 }
 
-new acf_field_tab();
+/*
+*  acf_field_tab
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_tab()
+{
+	global $acf_field_tab;
+	
+	if( !isset($acf_field_tab) )
+	{
+		$acf_field_tab = new acf_field_tab();
+	}
+	
+	return $acf_field_tab;
+}
+
+
+// initialize
+acf_field_tab();
+
+endif; // class_exists check
 
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_password') ):
+
 class acf_field_password extends acf_field
 {
 	
@@ -140,6 +142,33 @@ class acf_field_password extends acf_field
 	
 }
 
-new acf_field_password();
+/*
+*  acf_field_password
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_password()
+{
+	global $acf_field_password;
+	
+	if( !isset($acf_field_password) )
+	{
+		$acf_field_password = new acf_field_password();
+	}
+	
+	return $acf_field_password;
+}
+
+
+// initialize
+acf_field_password();
+
+endif; // class_exists check
 
 ?>

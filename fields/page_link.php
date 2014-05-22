@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_input') ):
+
 class acf_field_page_link extends acf_field
 {
 	/*
@@ -587,6 +589,33 @@ class acf_field_page_link extends acf_field
 	
 }
 
-new acf_field_page_link();
+/*
+*  acf_compatibility
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_page_link()
+{
+	global $acf_field_page_link;
+	
+	if( !isset($acf_field_page_link) )
+	{
+		$acf_field_page_link = new acf_field_page_link();
+	}
+	
+	return $acf_field_page_link;
+}
+
+
+// initialize
+acf_field_page_link();
+
+endif; // class_exists check
 
 ?>

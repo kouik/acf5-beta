@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_textarea') ):
+
 class acf_field_textarea extends acf_field
 {
 	
@@ -219,6 +221,33 @@ class acf_field_textarea extends acf_field
 	
 }
 
-new acf_field_textarea();
+/*
+*  acf_field_textarea
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_textarea()
+{
+	global $acf_field_textarea;
+	
+	if( !isset($acf_field_textarea) )
+	{
+		$acf_field_textarea = new acf_field_textarea();
+	}
+	
+	return $acf_field_textarea;
+}
+
+
+// initialize
+acf_field_textarea();
+
+endif; // class_exists check
 
 ?>

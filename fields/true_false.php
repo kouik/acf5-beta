@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_true_false') ):
+
 class acf_field_true_false extends acf_field
 {
 	
@@ -127,6 +129,33 @@ class acf_field_true_false extends acf_field
 	
 }
 
-new acf_field_true_false();
+/*
+*  acf_field_true_false
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_true_false()
+{
+	global $acf_field_true_false;
+	
+	if( !isset($acf_field_true_false) )
+	{
+		$acf_field_true_false = new acf_field_true_false();
+	}
+	
+	return $acf_field_true_false;
+}
+
+
+// initialize
+acf_field_true_false();
+
+endif; // class_exists check
 
 ?>

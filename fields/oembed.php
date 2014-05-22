@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_oembed') ):
+
 class acf_field_oembed extends acf_field
 {
 	
@@ -282,6 +284,33 @@ class acf_field_oembed extends acf_field
 	
 }
 
-new acf_field_oembed();
+/*
+*  acf_field_oembed
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_oembed()
+{
+	global $acf_field_oembed;
+	
+	if( !isset($acf_field_oembed) )
+	{
+		$acf_field_oembed = new acf_field_oembed();
+	}
+	
+	return $acf_field_oembed;
+}
+
+
+// initialize
+acf_field_oembed();
+
+endif; // class_exists check
 
 ?>

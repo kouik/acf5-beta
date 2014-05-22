@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_relationship') ):
+
 class acf_field_relationship extends acf_field
 {
 	/*
@@ -898,6 +900,33 @@ class acf_field_relationship extends acf_field
 		
 }
 
-new acf_field_relationship();
+/*
+*  acf_field_relationship
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_relationship()
+{
+	global $acf_field_relationship;
+	
+	if( !isset($acf_field_relationship) )
+	{
+		$acf_field_relationship = new acf_field_relationship();
+	}
+	
+	return $acf_field_relationship;
+}
+
+
+// initialize
+acf_field_relationship();
+
+endif; // class_exists check
 
 ?>

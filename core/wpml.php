@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_wpml_compatibility') ):
+	
 class acf_wpml_compatibility {
 	
 	/*
@@ -169,6 +171,33 @@ class acf_wpml_compatibility {
 	
 }
 
-new acf_wpml_compatibility();
+/*
+*  acf_wpml_compatibility
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_wpml_compatibility()
+{
+	global $acf_wpml_compatibility;
+	
+	if( !isset($acf_wpml_compatibility) )
+	{
+		$acf_wpml_compatibility = new acf_wpml_compatibility();
+	}
+	
+	return $acf_wpml_compatibility;
+}
+
+
+// initialize
+acf_wpml_compatibility();
+
+endif; // class_exists check
 
 ?>

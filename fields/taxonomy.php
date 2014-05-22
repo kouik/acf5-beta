@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_taxonomy') ):
+
 class acf_field_taxonomy extends acf_field
 {
 	/*
@@ -577,7 +579,34 @@ class acf_field_taxonomy extends acf_field
 		
 }
 
-new acf_field_taxonomy();
+/*
+*  acf_field_taxonomy
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_taxonomy()
+{
+	global $acf_field_taxonomy;
+	
+	if( !isset($acf_field_taxonomy) )
+	{
+		$acf_field_taxonomy = new acf_field_taxonomy();
+	}
+	
+	return $acf_field_taxonomy;
+}
+
+
+// initialize
+acf_field_taxonomy();
+
+endif; // class_exists check
 
 
 class acf_taxonomy_field_walker extends Walker

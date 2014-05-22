@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_input') ):
+
 class acf_field_message extends acf_field
 {
 	
@@ -74,6 +76,33 @@ class acf_field_message extends acf_field
 	
 }
 
-new acf_field_message();
+/*
+*  acf_field_message
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_message()
+{
+	global $acf_field_message;
+	
+	if( !isset($acf_field_message) )
+	{
+		$acf_field_message = new acf_field_message();
+	}
+	
+	return $acf_field_message;
+}
+
+
+// initialize
+acf_field_message();
+
+endif; // class_exists check
 
 ?>

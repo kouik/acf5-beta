@@ -194,6 +194,33 @@ class acf_json {
 	
 }
 
-new acf_json();
+/*
+*  acf_json
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_json()
+{
+	global $acf_json;
+	
+	if( !isset($acf_json) )
+	{
+		$acf_json = new acf_json();
+	}
+	
+	return $acf_json;
+}
+
+
+// initialize
+acf_json();
+
+endif; // class_exists check
 
 ?>

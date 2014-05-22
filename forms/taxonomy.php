@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_controller_taxonomy') ):
+
 class acf_controller_taxonomy {
 	
 	/*
@@ -323,6 +325,33 @@ class acf_controller_taxonomy {
 			
 }
 
-new acf_controller_taxonomy();
+/*
+*  acf_controller_taxonomy
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_controller_taxonomy()
+{
+	global $acf_controller_taxonomy;
+	
+	if( !isset($acf_controller_taxonomy) )
+	{
+		$acf_controller_taxonomy = new acf_controller_taxonomy();
+	}
+	
+	return $acf_controller_taxonomy;
+}
+
+
+// initialize
+acf_controller_taxonomy();
+
+endif; // class_exists check
 
 ?>

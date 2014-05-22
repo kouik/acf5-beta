@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_post_object') ):
+
 class acf_field_post_object extends acf_field
 {
 	/*
@@ -583,6 +585,33 @@ class acf_field_post_object extends acf_field
 	
 }
 
-new acf_field_post_object();
+/*
+*  acf_field_post_object
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_field_post_object()
+{
+	global $acf_field_post_object;
+	
+	if( !isset($acf_field_post_object) )
+	{
+		$acf_field_post_object = new acf_field_post_object();
+	}
+	
+	return $acf_field_post_object;
+}
+
+
+// initialize
+acf_field_post_object();
+
+endif; // class_exists check
 
 ?>

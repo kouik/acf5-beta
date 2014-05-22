@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_controller_widget') ):
+
 class acf_controller_widget {
 	
 	/*
@@ -256,6 +258,33 @@ class acf_controller_widget {
 	
 }
 
-new acf_controller_widget();
+/*
+*  acf_controller_widget
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_controller_widget()
+{
+	global $acf_controller_widget;
+	
+	if( !isset($acf_controller_widget) )
+	{
+		$acf_controller_widget = new acf_controller_widget();
+	}
+	
+	return $acf_controller_widget;
+}
+
+
+// initialize
+acf_controller_widget();
+
+endif; // class_exists check
 
 ?>

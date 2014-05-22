@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_controller_post') ):
+
 class acf_controller_post {
 	
 	var $post_id	= 0,
@@ -533,6 +535,33 @@ class acf_controller_post {
 			
 }
 
-new acf_controller_post();
+/*
+*  acf_controller_post
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_controller_post()
+{
+	global $acf_controller_post;
+	
+	if( !isset($acf_controller_post) )
+	{
+		$acf_controller_post = new acf_controller_post();
+	}
+	
+	return $acf_controller_post;
+}
+
+
+// initialize
+acf_controller_post();
+
+endif; // class_exists check
 
 ?>

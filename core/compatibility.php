@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_compatibility') ):
+
 class acf_compatibility {
 	
 	/*
@@ -392,6 +394,33 @@ class acf_compatibility {
 	
 }
 
-new acf_compatibility();
+/*
+*  acf_compatibility
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function acf_compatibility()
+{
+	global $acf_compatibility;
+	
+	if( !isset($acf_compatibility) )
+	{
+		$acf_compatibility = new acf_compatibility();
+	}
+	
+	return $acf_compatibility;
+}
+
+
+// initialize
+acf_compatibility();
+
+endif; // class_exists check
 
 ?>

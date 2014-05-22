@@ -1,5 +1,7 @@
 <?php
 
+if( !class_exists('acf_field_dummy') ):
+
 class acf_field_dummy extends acf_field
 {
 	
@@ -242,9 +244,34 @@ class acf_field_dummy extends acf_field
 	}
 }
 
+/*
+*  acf_field_dummy
+*
+*  @type	function
+*  @date	22/05/2014
+*  @since	5.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
 
-// create field
-new acf_field_dummy();
+function acf_field_dummy()
+{
+	global $acf_field_dummy;
+	
+	if( !isset($acf_field_dummy) )
+	{
+		$acf_field_dummy = new acf_field_dummy();
+	}
+	
+	return $acf_field_dummy;
+}
+
+
+// initialize
+acf_field_dummy();
+
+endif; // class_exists check
 
 
 /*--------------------------------------- fuctions.php ----------------------------------------------------*/
