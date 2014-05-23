@@ -1,6 +1,6 @@
 <?php
 
-if( !class_exists('acf_input') ):
+if( !class_exists('acf_field_number') ):
 
 class acf_field_number extends acf_field
 {
