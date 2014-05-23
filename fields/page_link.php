@@ -590,7 +590,7 @@ class acf_field_page_link extends acf_field
 }
 
 /*
-*  acf_compatibility
+*  acf_field_page_link
 *
 *  @type	function
 *  @date	22/05/2014
