@@ -1,5 +1,7 @@
 <?php 
 
+if( !class_exists('acf_json') ):
+	
 class acf_json {
 	
 	function __construct() {
