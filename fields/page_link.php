@@ -1,6 +1,6 @@
 <?php
 
-if( !class_exists('acf_input') ):
+if( !class_exists('acf_field_page_link') ):
 
 class acf_field_page_link extends acf_field
 {
