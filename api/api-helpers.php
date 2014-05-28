@@ -746,6 +746,9 @@ function acf_field_type_exists( $field_type ) {
 
 function acf_esc_attr( $atts )
 {
+	// filter for 3rd party developpers
+	$atts = apply_filters('acf/fields/attributes/field/type=' . $atts["type"], $atts);
+	
 	// is string?
 	if( is_string($atts) )
 	{
